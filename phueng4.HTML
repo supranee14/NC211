@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="phueng"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="rattana"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+<h2>The method Attribute</h2>
+
+<p>This form will be submitted using the GET method:</p>
+
+<form action="/action_page.php" target="_blank" method="get">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="spn"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="rtn"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>Bye</p>
+
+<h2>The select Element</h2>
+
+<p>The select element defines a drop-down list:</p>
+
+<form action="/action_page.php">
+  <label for="cars">animal</label>
+  <select id="cars" name="cars">
+    <option value="volvo">cat</option>
+    <option value="saab">dog</option>
+    <option value="fiat">ant</option>
+    <option value="audi">dolphin</option>
+  </select>
+  <input type="submit">
+</form>
+
+<h2>Radio Buttons</h2>
+
+<p>The <strong>input type="radio"</strong> defines a radio button:</p>
+
+<form action="/action_page.php">
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">cast</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">pretty</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">cool</label><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<h1>The input maxlength attribute</h1>
+​
+<p>The maxlength attribute specifies the maximum number of characters allowed in an input field:</p>
+​
+<form action="/action_page.php">
+  <label for="nname">nick name:</label><br>
+  <input type="text" id="fname" name="fname" size="50"><br>
+  <label for="Tel">Tel</label><br>
+  <input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h1>The input formaction attribute</h1>
+
+<p>The formaction attribute specifies the URL of a file that will process the input when the form is submitted.</p>
+
+<form action="/action_page.php">
+  <label for="รหัสนักศึกษา">รหัสนักศึกษา:</label>
+  <input type="text" id="รหัสนักศึกษา" name="รหัสนักศึกษา"><br><br>
+  <label for="เบอร์โทร">เบอร์โทร:</label>
+  <input type="text" id="เบอร์โทร" name="เบอร์โทร"><br><br>
+  <input type="submit" value="Submit">
+  <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+</form>
+
+</body>
+</html>
