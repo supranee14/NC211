@@ -1,0 +1,24 @@
+from logic import *
+import termcolor
+อยู่บนโต๊ะคอม = Symbol("เงินตั้งอยู่บนโต๊ะคอมในห้องทำงาน")
+ในตอนเช้า = Symbol("เห็นโทรศัพท์ในตอนเช้า")
+เล่นเกมในห้องนอน = Symbol("กำลังนั่งเล่นเกมในห้องนอน")
+เล่นเกมในห้องน้ำ = Symbol("กำลังเล่นเกมในห้องน้ำ")
+บนโต๊ะกินข้าว = Symbol("เงินตั้งอยู่บนโต๊ะกินข้าว")
+ที่โต๊ะกินข้าว = Symbol("กำลังเล่นเกมอยู่ที่โต๊ะกินข้าว")
+ในห้องนอน = Symbol("เงินอยู่ในห้องนอน")
+knowledge = And(
+    Implication(อยู่บนโต๊ะคอม, ในตอนเช้า),
+    Or(เล่นเกมในห้องนอน, เล่นเกมในห้องน้ำ),
+    Implication(เล่นเกมในห้องนอน, บนโต๊ะกินข้าว),
+    Not(เห็นในตอนเช้า),
+    Implication(เล่นเกมที่โต๊ะกินข้าว,  ในห้องนอน),
+    Implication(เล่นเกมในห้องน้ำ, บนโต๊ะคอม)
+)
+symbols = [บนโต๊ะคอม, ในห้องทำงาน, ในห้องนอน]
+def check_knowledge(knowledge):
+    for s in symbols:
+        if model_check(knowledge, s):
+            termcolor.cprint(f"{s}", "green")
+
+check_knowledge(knowledge)
